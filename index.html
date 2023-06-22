@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Dedi Indrawan</title>
+    <!-- connecting to css file -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- connecting to api icon font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- container start -->
+    <div class="container">
+        <!-- testimonials wrapper overlay start -->
+        <section class="testimonials-wrapper-overlay">
+            <div class="testimonials-list-overlay">
+                <span class="btn-close"><i class="fa-solid fa-xmark"></i></span>
+                <figure class="testimonials-image-overlay">
+                    <img src="./asset/img-2.jpg" alt="image">
+                    <i class="fa-solid fa-quote-left"></i>
+                </figure>
+                <figcaption class="testimonials-comment-overlay">
+                    <h3 class="testimonials-name-overlay">Sigmund</h3>
+                    <p class="testimonials-date-overlay">14 June, 2021</p>
+                    <p class="testimonials-description-overlay">Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Reprehenderit in asperiores iusto perferendis repellat facilis modi nihil ratione nesciunt
+                        rem, illo quis rerum animi voluptatum debitis placeat consequatur facere excepturi vel quasi!
+                        Explicabo, corporis cumque?</p>
+                </figcaption>
+            </div>
+        </section>
+        <!-- testimonials wrapper overlay end -->
+
+        <!-- user profile start -->
+        <aside class="user-profile">
+            <span class="toggle-contact" onclick="showHideContact()"><i class="fa-solid fa-chevron-down"></i></span>
+            <!-- user image -->
+            <div class="user-image">
+                <figure class="image-profile">
+                    <img src="./asset/img-1.jpg" alt="image">
+                </figure>
+                <figcaption class="bio-profile">
+                    <h2 class="username">Dedi Indrawan</h2>
+                    <small class="skills-info">Web Developer</small>
+                </figcaption>
+            </div>
+
+            <!-- user contact -->
+            <div class="user-contact">
+                <div class="contact-list">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="contact-body">
+                        <small class="contact-title">EMAIL</small>
+                        <a href="mailto:dediindrawan632@gmail.com" class="contact-description"><small id="title"
+                                onmouseover="showTitle()">dediindrawan632@gmail.com</small></a>
+                    </div>
+                </div>
+                <div class="contact-list">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="contact-body">
+                        <small class="contact-title">PHONE</small>
+                        <a href="tel:+628974523500" class="contact-description"><small id="title"
+                                onmouseover="showTitle()">+62 897 4523 500</small></a>
+                    </div>
+                </div>
+                <div class="contact-list">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <div class="contact-body">
+                        <small class="contact-title">BIRTHDAY</small>
+                        <small class="contact-description" id="title" onmouseover="showTitle()">December 08,
+                            1988</small>
+                    </div>
+                </div>
+                <div class="contact-list">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="contact-body">
+                        <small class="contact-title">LOCATION</small>
+                        <small class="contact-description" id="title" onmouseover="showTitle()">Bogor, Jawa Barat -
+                            Indonesia</small>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" title="Github"><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+        </aside>
+        <!-- user profile end -->
+
+        <!-- user information start -->
+        <main class="user-information">
+            <!-- nav items -->
+            <nav class="nav-items">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- user description -->
+            <header class="user-description">
+                <section id="about">
+                    <h1>About Me</h1>
+                    <article class="description-profile">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium facere adipisci
+                            natus non in illum doloremque nobis eos inventore explicabo cumque enim ad deserunt
+                            libero veniam nihil culpa earum autem animi velit, optio omnis assumenda!</p>
+                        <br>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus obcaecati officiis
+                            numquam dolores sed, minima nihil neque impedit quibusdam labore? Expedita
+                            exercitationem, similique tenetur necessitatibus magni repudiandae veniam pariatur
+                            ipsam
+                            molestiae optio sunt, excepturi eos aliquid ab temporibus a. Repellendus ex sapiente
+                            provident hic quia.</p>
+                    </article>
+                </section>
+            </header>
+
+            <!-- user skills -->
+            <section class="user-skills">
+                <h2>What I'm Doing</h2>
+
+                <div class="card-wrapper">
+                    <div class="card-list">
+                        <i class="fa-solid fa-file-pen"></i>
+                        <div class="card-body">
+                            <h3 class="card-title">Content Writing</h3>
+                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="card-list">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <div class="card-body">
+                            <h3 class="card-title">Web Development</h3>
+                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="card-list">
+                        <i class="fa-solid fa-store"></i>
+                        <div class="card-body">
+                            <h3 class="card-title">Retail Management</h3>
+                            <p class="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="card-list">
+                        <i class="fa-solid fa-video"></i>
+                        <div class="card-body">
+                            <h3 class="card-title">Smartphone Videography</h3>
+                            <p class="card-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- testimonials -->
+            <section class="testimonials">
+                <h2>Testimonials</h2>
+
+                <div class="testimonials-wrapper">
+                    <div class="testimonials-profile">
+                        <div class="testimonials-list">
+                            <figure class="testimonials-image">
+                                <img src="./asset/img-2.jpg" alt="image">
+                                <figcaption class="testimonials-comment">
+                                    <h3 class="testimonials-name">Sigmund</h3>
+                                    <p class="testimonials-description">Lorem, ipsum dolor sit amet consectetur
+                                        adipisicing elit. Facilis, excepturi nostrum ipsum asperiores numquam
+                                        quibusdam
+                                        consequatur mollitia unde ad? Quod, reprehenderit voluptas harum nisi
+                                        adipisci
+                                        id beatae aspernatur totam laboriosam exercitationem, doloribus amet quae
+                                        pariatur blanditiis optio nobis non. Totam, tempore iste provident voluptate
+                                        harum repudiandae debitis ab eveniet quibusdam!</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="testimonials-list">
+                            <figure class="testimonials-image">
+                                <img src="./asset/img-4.jpg" alt="image">
+                                <figcaption class="testimonials-comment">
+                                    <h3 class="testimonials-name">Joanna Nix</h3>
+                                    <p class="testimonials-description">Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Velit ab et aliquam veniam, at suscipit. In possimus
+                                        assumenda
+                                        atque? Quidem asperiores quia quisquam magnam perspiciatis mollitia facere
+                                        quae,
+                                        consequuntur cumque temporibus accusamus dolorum necessitatibus sunt dolores
+                                        placeat molestiae dolorem dolore nemo natus? Similique eveniet explicabo
+                                        excepturi sed praesentium dolorem necessitatibus!</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="testimonials-list">
+                            <figure class="testimonials-image">
+                                <img src="./asset/img-3.jpg" alt="image">
+                                <figcaption class="testimonials-comment">
+                                    <h3 class="testimonials-name">Ian Dooley</h3>
+                                    <p class="testimonials-description">Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Velit ab et aliquam veniam, at suscipit. In possimus
+                                        assumenda
+                                        atque? Quidem asperiores quia quisquam magnam perspiciatis mollitia facere
+                                        quae,
+                                        consequuntur cumque temporibus accusamus dolorum necessitatibus sunt dolores
+                                        placeat molestiae dolorem dolore nemo natus? Similique eveniet explicabo
+                                        excepturi sed praesentium dolorem necessitatibus!</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="testimonials-list">
+                            <figure class="testimonials-image">
+                                <img src="./asset/img-5.jpg" alt="image">
+                                <figcaption class="testimonials-comment">
+                                    <h3 class="testimonials-name">Stephanie Lee</h3>
+                                    <p class="testimonials-description">Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Velit ab et aliquam veniam, at suscipit. In possimus
+                                        assumenda
+                                        atque? Quidem asperiores quia quisquam magnam perspiciatis mollitia facere
+                                        quae,
+                                        consequuntur cumque temporibus accusamus dolorum necessitatibus sunt dolores
+                                        placeat molestiae dolorem dolore nemo natus? Similique eveniet explicabo
+                                        excepturi sed praesentium dolorem necessitatibus!</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- clients -->
+            <section class="clients">
+                <h2>Clients</h2>
+
+                <div class="clients-wrapper">
+                    <div class="clients-profile">
+                        <div class="clients-list">
+                            <figure class="clients-image">
+                                <a href="#"><img src="./asset/img-6.png" alt="image"></a>
+                            </figure>
+                        </div>
+                        <div class="clients-list">
+                            <figure class="clients-image">
+                                <a href="#"><img src="./asset/img-7.png" alt="image"></a>
+                            </figure>
+                        </div>
+                        <div class="clients-list">
+                            <figure class="clients-image">
+                                <a href="#"><img src="./asset/img-8.png" alt="image"></a>
+                            </figure>
+                        </div>
+                        <div class="clients-list">
+                            <figure class="clients-image">
+                                <a href="#"><img src="./asset/img-9.png" alt="image"></a>
+                            </figure>
+                        </div>
+                        <div class="clients-list">
+                            <figure class="clients-image">
+                                <a href="#"><img src="./asset/img-10.png" alt="image"></a>
+                            </figure>
+                        </div>
+                        <div class="clients-list">
+                            <figure class="clients-image">
+                                <a href="#"><img src="./asset/img-11.png" alt="image"></a>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- user information start -->
+    </div>
+    <!-- container end -->
+
+    <!-- connecting to javascript file -->
+    <script src="./javascript/script.js"></script>
+</body>
+
+</html>

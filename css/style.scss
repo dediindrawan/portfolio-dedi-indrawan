@@ -1,0 +1,687 @@
+// typography
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+// font family
+$ft-1: 'Poppins', sans-serif;
+
+// variables of color
+$dark-1: rgb(16, 16, 16);
+$dark-2: rgb(29, 29, 30);
+$secondary-1: rgb(32, 32, 34);
+$secondary-2: rgb(39, 39, 40);
+$secondary-muted-2: rgba(39, 39, 40, 0.5);
+$warning: rgb(254, 218, 114);
+$light: rgb(249, 249, 249);
+$light-muted-1: rgba(249, 249, 249, 0.1);
+$light-muted-2: rgba(249, 249, 249, 0.6);
+$light-muted-3: rgba(249, 249, 249, 0.8);
+$dark-muted-1: rgba(16, 16, 16, 0.8);
+
+// variables of font size
+$fs-1: 2rem;
+$fs-2: 1.5rem;
+$fs-3: 1.17rem;
+$fs-4: 1rem;
+$fs-5: 0.83rem;
+$fs-6: 0.67rem;
+
+// variables of font weight
+$fw-1: 100;
+$fw-2: 200;
+$fw-3: 300;
+$fw-4: 400;
+$fw-5: 500;
+$fw-6: 600;
+$fw-7: 700;
+$fw-8: 800;
+$fw-9: 900;
+
+// variables of transition
+$trans-1: all 0.3s ease-in-out;
+
+// reset default
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: $fs-1;
+  font-weight: $fw-6;
+}
+
+h2 {
+  font-size: $fs-2;
+  font-weight: $fw-6;
+}
+
+h3 {
+  font-size: $fs-3;
+  font-weight: $fw-6;
+}
+
+h4 {
+  font-size: $fs-4;
+  font-weight: $fw-6;
+}
+
+h5 {
+  font-size: $fs-5;
+  font-weight: $fw-6;
+}
+
+h6 {
+  font-size: $fs-6;
+  font-weight: $fw-6;
+}
+
+p {
+  font-size: 0.94rem;
+  font-weight: $fw-3;
+  color: $light-muted-3;
+}
+
+a {
+  font-size: 0.94rem;
+  text-decoration: none;
+  font-weight: $fw-3;
+  color: $light-muted-3;
+  transition: $trans-1;
+}
+
+a:hover {
+  color: $light-muted-2;
+}
+
+i {
+  font-size: $fs-3;
+  color: $warning;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  padding: 0.75em;
+  border-radius: 7.5px;
+  cursor: pointer;
+  font-size: $fs-4;
+  transition: $trans-1;
+}
+
+::selection {
+  color: $secondary-1;
+  background: $warning;
+}
+
+// style
+html,
+body {
+  line-height: 1.65;
+  font-weight: normal;
+  font-style: normal;
+  scroll-behavior: smooth;
+  font-family: $ft-1;
+  color: $light;
+  background: $dark-1;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  overflow-y: scroll;
+  @media screen and (max-width: 578px) {
+    flex-direction: column;
+    padding: 0.95em 0.75em;
+    padding-bottom: 4.7em;
+  }
+  .testimonials-wrapper-overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    background: $dark-muted-1;
+    display: none;
+    @media screen and (max-width: 578px) {
+      padding: 0.95em;
+    }
+    .testimonials-list-overlay {
+      width: 50%;
+      padding: 1.9em 1.85em;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      gap: 1em;
+      border-radius: 15px;
+      border: 1px solid $light-muted-1;
+      background: $secondary-1;
+      @media screen and (max-width: 578px) {
+        width: 100%;
+        padding: 0.95em;
+        flex-direction: column;
+      }
+      .btn-close {
+        width: 35px;
+        height: 35px;
+        display: grid;
+        place-items: center;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        cursor: pointer;
+        border-radius: 5px;
+        opacity: 0.7;
+        background: $light-muted-1;
+        transition: $trans-1;
+        &:hover {
+          opacity: 1;
+        }
+        i {
+          color: $light-muted-2;
+        }
+      }
+      .testimonials-image-overlay {
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        img {
+          width: 85px;
+          aspect-ratio: 1/1;
+          object-fit: cover;
+          border-radius: 15px;
+          border: 1px solid $light-muted-1;
+        }
+        i {
+          height: 100%;
+          font-size: 3.15rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @media screen and (max-width: 578px) {
+            display: none;
+          }
+        }
+      }
+      .testimonials-comment-overlay {
+        width: 80%;
+        @media screen and (max-width: 578px) {
+          width: 100%;
+          p {
+            font-size: $fs-5;
+          }
+        }
+        .testimonials-date-overlay {
+          margin: 0.6em auto;
+          color: $light-muted-2;
+          @media screen and (max-width: 578px) {
+            font-size: $fs-5;
+          }
+        }
+      }
+    }
+  }
+  .user-profile {
+    width: 20.35%;
+    height: max-content;
+    position: sticky;
+    top: 3.75em;
+    left: 4.7em;
+    margin-bottom: 3.75em;
+    padding: 1.9em 1.85em;
+    border-radius: 20px;
+    border: 1px solid $light-muted-1;
+    background: $secondary-1;
+    @media screen and (max-width: 578px) {
+      width: 100%;
+      position: relative;
+      top: 0;
+      left: 0;
+      padding: 0.95em;
+    }
+    .toggle-contact {
+      width: 33px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      border-bottom-left-radius: 15px;
+      border-top-right-radius: 20px;
+      border-left: 1px solid $light-muted-1;
+      background: $secondary-2;
+      color: $warning;
+      transition: $trans-1;
+      display: none;
+      &:hover {
+        box-shadow: inset 1px 1px 3px $warning;
+      }
+      i {
+        font-size: $fs-6;
+      }
+      @media screen and (max-width: 578px) {
+        display: grid;
+        cursor: pointer;
+      }
+    }
+    .user-image {
+      width: 100%;
+      position: relative;
+      @media screen and (max-width: 578px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .image-profile {
+        width: 100%;
+        margin-top: 1.9em;
+        display: flex;
+        justify-content: center;
+        @media screen and (max-width: 578px) {
+          width: 15%;
+          margin-top: 0;
+        }
+        img {
+          width: 150px;
+          // aspect-ratio: 1/1;
+          border-radius: 30px;
+          border: 1px solid $light-muted-1;
+          @media screen and (max-width: 578px) {
+            width: 100%;
+            border-radius: 20px;
+          }
+        }
+      }
+      .bio-profile {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @media screen and (max-width: 578px) {
+          width: 82%;
+          align-items: start;
+        }
+        .username {
+          margin-top: 1em;
+          margin-bottom: 0.5em;
+          @media screen and (max-width: 578px) {
+            margin-top: 0;
+            font-size: $fs-4;
+          }
+        }
+        .skills-info {
+          padding: 0.3em 1em;
+          border-radius: 10px;
+          background: $light-muted-1;
+          @media screen and (max-width: 578px) {
+            font-size: $fs-6;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 578px) {
+      .hide-contact {
+        display: none;
+      }
+    }
+    .user-contact {
+      width: 100%;
+      margin-top: 1.9em;
+      padding-top: 1.9em;
+      border-top: 1px solid $light-muted-1;
+      @media screen and (max-width: 578px) {
+        margin-top: 1em;
+        padding-top: 1em;
+      }
+      .contact-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:not(:first-child) {
+          margin-top: 1.9em;
+        }
+        i {
+          width: 48px;
+          height: 48px;
+          display: grid;
+          place-items: center;
+          border-radius: 15px;
+          border-top: 1px solid $light-muted-1;
+          border-left: 1px solid $light-muted-1;
+          background: $secondary-2;
+          @media screen and (max-width: 578px) {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            font-size: $fs-5;
+          }
+        }
+        .contact-body {
+          width: 70%;
+          display: flex;
+          flex-direction: column;
+          @media screen and (max-width: 578px) {
+            width: 85%;
+            font-size: $fs-5;
+          }
+          .contact-title {
+            color: $light-muted-2;
+          }
+          .contact-description {
+            white-space: wrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: $light;
+          }
+        }
+      }
+      .social-media {
+        width: 100%;
+        margin-top: 1.9em;
+        display: flex;
+        justify-content: space-evenly;
+        @media screen and (max-width: 578px) {
+          padding-top: 1em;
+          margin-top: 1em;
+          justify-content: start;
+          gap: 1em;
+          border-top: 1px solid $light-muted-1;
+          i {
+            font-size: $fs-4;
+          }
+        }
+      }
+    }
+  }
+  .user-information {
+    width: 66.6%;
+    height: max-content;
+    position: relative;
+    margin-top: 3.75em;
+    margin-right: 4.7em;
+    margin-bottom: 3.75em;
+    padding: 1.9em 1.85em;
+    border-radius: 20px;
+    border: 1px solid $light-muted-1;
+    background: $secondary-1;
+    @media screen and (max-width: 578px) {
+      width: 100%;
+      padding: 0.95em;
+      margin-top: -2.85em;
+      margin-right: 0;
+      margin-bottom: 0;
+      p {
+        font-size: $fs-5;
+      }
+    }
+  }
+  .nav-items {
+    width: 59.55%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    @media screen and (max-width: 578px) {
+      width: 100%;
+    }
+    ul {
+      width: 100%;
+      padding: 1.15em 1.6em;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      border-bottom: 1px solid $light-muted-1;
+      border-left: 1px solid $light-muted-1;
+      background: $light-muted-1;
+      @media screen and (max-width: 578px) {
+        width: 100%;
+        justify-content: center;
+        gap: 1em;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 0;
+        backdrop-filter: blur(150px);
+        background: $secondary-muted-2;
+        li a {
+          font-size: $fs-6;
+        }
+      }
+    }
+  }
+  .user-description {
+    width: 100%;
+    #about {
+      width: 100%;
+      h1 {
+        width: max-content;
+        @media screen and (max-width: 578px) {
+          font-size: $fs-2;
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: 26%;
+          margin-top: 0.4em;
+          margin-bottom: 0.6em;
+          border-radius: 10px;
+          border-bottom: 5px solid $warning;
+        }
+      }
+    }
+  }
+  .user-skills {
+    width: 100%;
+    margin-top: 2.49em;
+    @media screen and (max-width: 578px) {
+      margin-top: 1em;
+    }
+    h2 {
+      margin-bottom: 0.6em;
+      @media screen and (max-width: 578px) {
+        font-size: $fs-3;
+      }
+    }
+    .card-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1em;
+      .card-list {
+        width: 49%;
+        padding: 1.85em;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        border-radius: 15px;
+        border-top: 1px solid $light-muted-1;
+        border-left: 1px solid $light-muted-1;
+        background: $secondary-2;
+        @media screen and (max-width: 578px) {
+          width: 100%;
+          flex-direction: column;
+          padding-top: 0;
+          align-items: center;
+        }
+        i {
+          width: 65px;
+          height: 65px;
+          font-size: 2.15rem;
+          display: grid;
+          place-items: center;
+          @media screen and (max-width: 578px) {
+            font-size: 1.85em;
+          }
+        }
+        .card-body {
+          width: 75%;
+          @media screen and (max-width: 578px) {
+            width: 100%;
+            text-align: center;
+          }
+          .card-title {
+            margin-bottom: 0.6em;
+            @media screen and (max-width: 578px) {
+              font-size: $fs-4;
+            }
+          }
+        }
+      }
+    }
+  }
+  .testimonials {
+    width: 100%;
+    margin-top: 2.49em;
+    @media screen and (max-width: 578px) {
+      margin-top: 1em;
+    }
+    h2 {
+      margin-bottom: 0.6em;
+      @media screen and (max-width: 578px) {
+        font-size: $fs-3;
+      }
+    }
+    .testimonials-wrapper {
+      width: 100%;
+      padding-bottom: 2.49em;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      @media screen and (max-width: 578px) {
+        padding-bottom: 0;
+      }
+      .testimonials-profile {
+        width: 100%;
+        margin-top: 2.49em;
+        display: flex;
+        gap: 1em;
+        @media screen and (max-width: 578px) {
+          margin-top: 1em;
+        }
+        .testimonials-list {
+          width: 49%;
+          scroll-snap-align: start;
+          flex-shrink: 0;
+          cursor: pointer;
+          @media screen and (max-width: 578px) {
+            width: 100%;
+          }
+          .testimonials-image {
+            width: 100%;
+            position: relative;
+            @media screen and (max-width: 578px) {
+              padding: 0.95em;
+            }
+            img {
+              width: 85px;
+              aspect-ratio: 1/1;
+              object-fit: cover;
+              position: absolute;
+              top: -2em;
+              left: 2em;
+              border-radius: 15px;
+              border: 1px solid $light-muted-1;
+              @media screen and (max-width: 578px) {
+                width: 65px;
+                top: -1em;
+                left: 1em;
+              }
+            }
+            .testimonials-comment {
+              width: 100%;
+              padding: 1.85em;
+              border-radius: 15px;
+              border-top: 1px solid $light-muted-1;
+              border-left: 1px solid $light-muted-1;
+              background: $secondary-2;
+              @media screen and (max-width: 578px) {
+                width: 109%;
+                padding: 0.95em;
+                margin: auto -0.95em;
+              }
+              .testimonials-name {
+                text-align: center;
+                margin-bottom: 0.6em;
+                @media screen and (max-width: 578px) {
+                  margin-top: 1.5em;
+                  text-align: start;
+                }
+              }
+              .testimonials-description {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                @media screen and (max-width: 578px) {
+                  -webkit-line-clamp: 4;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .clients {
+    width: 100%;
+    margin-top: 2.49em;
+    @media screen and (max-width: 578px) {
+      margin-top: 1em;
+    }
+    h2 {
+      margin-bottom: 0.6em;
+      @media screen and (max-width: 578px) {
+        font-size: $fs-3;
+      }
+    }
+    .clients-wrapper {
+      width: 100%;
+      padding-bottom: 2.49em;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      .clients-profile {
+        width: 100%;
+        display: flex;
+        gap: 1em;
+        .clients-list {
+          width: 23.5%;
+          scroll-snap-align: start;
+          flex-shrink: 0;
+          @media screen and (max-width: 578px) {
+            width: 30%;
+          }
+          .clients-image {
+            width: 100%;
+            a img {
+              width: 100%;
+              object-fit: cover;
+              filter: grayscale(1);
+              transition: $trans-1;
+              &:hover {
+                filter: grayscale(0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
