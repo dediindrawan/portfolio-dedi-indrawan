@@ -136,10 +136,30 @@ body {
   display: flex;
   justify-content: space-between;
   overflow-y: scroll;
-  @media screen and (max-width: 578px) {
-    flex-direction: column;
+  @media only screen and (max-width: 580px) {
     padding: 0.95em 0.75em;
     padding-bottom: 4.7em;
+    flex-direction: column;
+  }
+  @media only screen and (min-width: 580px) {
+    padding: 3.75em 2em;
+    padding-bottom: 5.75em;
+    flex-direction: column;
+  }
+  @media only screen and (min-width: 1250px) {
+    padding: 3.75em 4.7em;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .hide-contact {
+    display: none !important;
+    @media only screen and (min-width: 1250px) {
+      display: block !important;
+    }
+  }
+  .rotate-contact-icon {
+    transform: rotate(180deg);
+    transition: $trans-1;
   }
   .testimonials-wrapper-overlay {
     width: 100%;
@@ -154,8 +174,11 @@ body {
     place-items: center;
     background: $dark-muted-1;
     display: none;
-    @media screen and (max-width: 578px) {
+    @media only screen and (max-width: 580px) {
       padding: 0.95em;
+    }
+    @media only screen and (min-width: 580px) {
+      padding: 2.5em;
     }
     .testimonials-list-overlay {
       width: 50%;
@@ -167,10 +190,18 @@ body {
       border-radius: 15px;
       border: 1px solid $light-muted-1;
       background: $secondary-1;
-      @media screen and (max-width: 578px) {
+      @media only screen and (max-width: 580px) {
         width: 100%;
         padding: 0.95em;
         flex-direction: column;
+      }
+      @media only screen and (min-width: 580px) {
+        width: 100%;
+        padding: 1.9em 1.85em;
+        flex-direction: row;
+      }
+      @media only screen and (min-width: 1250px) {
+        width: 55%;
       }
       .btn-close {
         width: 35px;
@@ -209,31 +240,45 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          @media screen and (max-width: 578px) {
+          @media only screen and (max-width: 580px) {
             display: none;
+          }
+          @media only screen and (min-width: 580px) {
+            display: flex;
           }
         }
       }
       .testimonials-comment-overlay {
         width: 80%;
-        @media screen and (max-width: 578px) {
+        @media only screen and (max-width: 580px) {
           width: 100%;
           p {
             font-size: $fs-5;
           }
         }
+        @media only screen and (min-width: 580px) {
+          width: 85%;
+          p {
+            font-size: $fs-4;
+          }
+        }
+        @media only screen and (min-width: 1250px) {
+          width: 80%;
+        }
         .testimonials-date-overlay {
           margin: 0.6em auto;
           color: $light-muted-2;
-          @media screen and (max-width: 578px) {
+          @media only screen and (max-width: 580px) {
             font-size: $fs-5;
+          }
+          @media only screen and (min-width: 580px) {
+            font-size: $fs-4;
           }
         }
       }
     }
   }
   .user-profile {
-    width: 20.35%;
     height: max-content;
     position: sticky;
     top: 3.75em;
@@ -243,65 +288,127 @@ body {
     border-radius: 20px;
     border: 1px solid $light-muted-1;
     background: $secondary-1;
-    @media screen and (max-width: 578px) {
+    @media only screen and (max-width: 580px) {
       width: 100%;
       position: relative;
       top: 0;
       left: 0;
       padding: 0.95em;
     }
-    .toggle-contact {
-      width: 33px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      position: absolute;
+    @media only screen and (min-width: 580px) {
+      width: 100%;
+      position: relative;
       top: 0;
-      right: 0;
-      z-index: 1;
-      border-bottom-left-radius: 15px;
-      border-top-right-radius: 20px;
-      border-left: 1px solid $light-muted-1;
-      background: $secondary-2;
-      color: $warning;
-      transition: $trans-1;
-      display: none;
-      &:hover {
-        box-shadow: inset 1px 1px 3px $warning;
+      left: 0;
+      padding: 1.9em 1.85em;
+    }
+    @media only screen and (min-width: 1250px) {
+      width: 22.95%;
+      position: sticky;
+    }
+    .toggle-contact {
+      @media only screen and (max-width: 580px) {
+        i {
+          width: 33px;
+          height: 30px;
+          display: grid;
+          place-items: center;
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 1;
+          border-bottom-left-radius: 15px;
+          border-top-right-radius: 20px;
+          cursor: pointer;
+          border-left: 1px solid $light-muted-1;
+          font-size: $fs-6;
+          background: $secondary-2;
+          color: $warning;
+          transition: $trans-1;
+          &:hover {
+            box-shadow: inset 1px 1px 3px $warning;
+          }
+        }
+        .toggle-content {
+          display: none;
+        }
       }
-      i {
-        font-size: $fs-6;
+      @media only screen and (min-width: 580px) {
+        i {
+          display: none;
+        }
+        .toggle-content {
+          width: max-content;
+          height: max-content;
+          padding: 0.6em 1em;
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 1;
+          border-bottom-left-radius: 15px;
+          border-top-right-radius: 20px;
+          user-select: none;
+          cursor: pointer;
+          border-left: 1px solid $light-muted-1;
+          box-shadow: inset 1px 1px 3px $warning;
+          background: $secondary-2;
+          color: $warning;
+        }
       }
-      @media screen and (max-width: 578px) {
-        display: grid;
-        cursor: pointer;
+      @media only screen and (min-width: 1250px) {
+        display: none;
       }
     }
     .user-image {
       width: 100%;
       position: relative;
-      @media screen and (max-width: 578px) {
+      @media only screen and (max-width: 580px) {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
+      @media only screen and (min-width: 580px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media only screen and (min-width: 1250px) {
+        flex-direction: column;
+      }
       .image-profile {
-        width: 100%;
         margin-top: 1.9em;
         display: flex;
         justify-content: center;
-        @media screen and (max-width: 578px) {
+        @media only screen and (max-width: 580px) {
           width: 15%;
           margin-top: 0;
         }
+        @media only screen and (min-width: 580px) {
+          width: 20%;
+          margin-top: 0;
+        }
+        @media only screen and (min-width: 768px) {
+          width: 17%;
+        }
+        @media only screen and (min-width: 1024px) {
+          width: 15%;
+        }
+        @media only screen and (min-width: 1250px) {
+          width: 71.5%;
+          margin-top: 1.9em;
+        }
         img {
           width: 150px;
-          // aspect-ratio: 1/1;
           border-radius: 30px;
           border: 1px solid $light-muted-1;
-          @media screen and (max-width: 578px) {
+          @media only screen and (max-width: 580px) {
             width: 100%;
             border-radius: 20px;
+          }
+          @media only screen and (min-width: 580px) {
+            width: 100%;
+            border-radius: 30px;
           }
         }
       }
@@ -310,31 +417,50 @@ body {
         display: flex;
         align-items: center;
         flex-direction: column;
-        @media screen and (max-width: 578px) {
+        @media only screen and (max-width: 580px) {
           width: 82%;
           align-items: start;
+        }
+        @media only screen and (min-width: 580px) {
+          width: 75%;
+          align-items: start;
+        }
+        @media only screen and (min-width: 768px) {
+          width: 80%;
+        }
+        @media only screen and (min-width: 1024px) {
+          width: 82%;
+        }
+        @media only screen and (min-width: 1250px) {
+          width: 100%;
+          align-items: center;
         }
         .username {
           margin-top: 1em;
           margin-bottom: 0.5em;
-          @media screen and (max-width: 578px) {
+          @media only screen and (max-width: 580px) {
             margin-top: 0;
             font-size: $fs-4;
+          }
+          @media only screen and (min-width: 580px) {
+            margin-top: 0;
+            font-size: $fs-2;
+          }
+          @media only screen and (min-width: 1250px) {
+            margin-top: 1em;
           }
         }
         .skills-info {
           padding: 0.3em 1em;
           border-radius: 10px;
           background: $light-muted-1;
-          @media screen and (max-width: 578px) {
+          @media only screen and (max-width: 580px) {
             font-size: $fs-6;
           }
+          @media only screen and (min-width: 580px) {
+            font-size: $fs-5;
+          }
         }
-      }
-    }
-    @media screen and (max-width: 578px) {
-      .hide-contact {
-        display: none;
       }
     }
     .user-contact {
@@ -342,9 +468,20 @@ body {
       margin-top: 1.9em;
       padding-top: 1.9em;
       border-top: 1px solid $light-muted-1;
-      @media screen and (max-width: 578px) {
+      @media only screen and (max-width: 580px) {
         margin-top: 1em;
         padding-top: 1em;
+      }
+      @media only screen and (min-width: 580px) {
+        margin-top: 1.9em;
+        padding-top: 1.9em;
+      }
+      @media only screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1em;
       }
       .contact-list {
         width: 100%;
@@ -353,6 +490,36 @@ body {
         align-items: center;
         &:not(:first-child) {
           margin-top: 1.9em;
+        }
+        @media only screen and (max-width: 580px) {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &:not(:first-child) {
+            margin-top: 1.9em;
+          }
+        }
+        @media only screen and (min-width: 580px) {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &:not(:first-child) {
+            margin-top: 1.9em;
+          }
+        }
+        @media only screen and (min-width: 768px) {
+          width: 48.7%;
+          &:not(:first-child) {
+            margin-top: 0;
+          }
+        }
+        @media only screen and (min-width: 1250px) {
+          width: 100%;
+          &:not(:first-child) {
+            margin-top: 1.9em;
+          }
         }
         i {
           width: 48px;
@@ -363,20 +530,47 @@ body {
           border-top: 1px solid $light-muted-1;
           border-left: 1px solid $light-muted-1;
           background: $secondary-2;
-          @media screen and (max-width: 578px) {
+          @media only screen and (max-width: 580px) {
             width: 38px;
             height: 38px;
             border-radius: 10px;
             font-size: $fs-5;
+          }
+          @media only screen and (min-width: 580px) {
+            width: 48px;
+            height: 48px;
+            border-radius: 15px;
+            font-size: $fs-4;
+          }
+          @media only screen and (min-width: 1250px) {
+            width: 48px;
+            height: 48px;
           }
         }
         .contact-body {
           width: 70%;
           display: flex;
           flex-direction: column;
-          @media screen and (max-width: 578px) {
-            width: 85%;
+          @media only screen and (max-width: 580px) {
+            width: 89%;
             font-size: $fs-5;
+            a {
+              font-size: $fs-5;
+            }
+          }
+          @media only screen and (min-width: 580px) {
+            width: 85%;
+            font-size: $fs-4;
+            a {
+              font-size: $fs-4;
+            }
+          }
+          @media only screen and (min-width: 768px) {
+            width: 80%;
+            font-size: $fs-4;
+          }
+          @media only screen and (min-width: 1250px) {
+            width: 70%;
           }
           .contact-title {
             color: $light-muted-2;
@@ -394,7 +588,7 @@ body {
         margin-top: 1.9em;
         display: flex;
         justify-content: space-evenly;
-        @media screen and (max-width: 578px) {
+        @media only screen and (max-width: 580px) {
           padding-top: 1em;
           margin-top: 1em;
           justify-content: start;
@@ -403,6 +597,19 @@ body {
           i {
             font-size: $fs-4;
           }
+        }
+        @media only screen and (min-width: 580px) {
+          padding-top: 1.9em;
+          margin-top: 1.9em;
+          justify-content: start;
+          gap: 1em;
+          border-top: 1px solid $light-muted-1;
+          i {
+            font-size: $fs-4;
+          }
+        }
+        @media only screen and (min-width: 1250px) {
+          justify-content: center;
         }
       }
     }
@@ -418,7 +625,7 @@ body {
     border-radius: 20px;
     border: 1px solid $light-muted-1;
     background: $secondary-1;
-    @media screen and (max-width: 578px) {
+    @media only screen and (max-width: 580px) {
       width: 100%;
       padding: 0.95em;
       margin-top: -2.85em;
@@ -428,210 +635,338 @@ body {
         font-size: $fs-5;
       }
     }
-  }
-  .nav-items {
-    width: 59.55%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    @media screen and (max-width: 578px) {
+    @media only screen and (min-width: 580px) {
       width: 100%;
+      padding: 1.9em 1.85em;
+      margin-top: -1.85em;
+      margin-right: 0;
+      margin-bottom: 0;
+      p {
+        font-size: $fs-4;
+      }
     }
-    ul {
-      width: 100%;
-      padding: 1.15em 1.6em;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      border-top-right-radius: 20px;
-      border-bottom-left-radius: 20px;
-      border-bottom: 1px solid $light-muted-1;
-      border-left: 1px solid $light-muted-1;
-      background: $light-muted-1;
-      @media screen and (max-width: 578px) {
+    @media only screen and (min-width: 1024px) {
+      margin-bottom: -1.85em;
+    }
+    @media only screen and (min-width: 1250px) {
+      width: 75%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .nav-items {
+      width: 59.55%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      @media only screen and (max-width: 580px) {
         width: 100%;
-        justify-content: center;
-        gap: 1em;
-        position: fixed;
-        bottom: 0;
-        left: 0;
+      }
+      @media only screen and (min-width: 580px) {
+        width: 100%;
+      }
+      ul {
+        width: 100%;
+        padding: 1.15em 1.6em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         border-top-right-radius: 20px;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 0;
-        backdrop-filter: blur(150px);
-        background: $secondary-muted-2;
-        li a {
-          font-size: $fs-6;
+        border-bottom-left-radius: 20px;
+        border-bottom: 1px solid $light-muted-1;
+        border-left: 1px solid $light-muted-1;
+        background: $light-muted-1;
+        @media only screen and (max-width: 580px) {
+          width: 100%;
+          justify-content: center;
+          gap: 1em;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          border-top-right-radius: 20px;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 0;
+          backdrop-filter: blur(100px);
+          border-bottom: none;
+          border-left: none;
+          border-top: 1px solid $light-muted-1;
+          background: $secondary-muted-2;
+          li a {
+            font-size: $fs-6;
+          }
+        }
+        @media only screen and (min-width: 580px) {
+          width: 100%;
+          justify-content: center;
+          gap: 1em;
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          border-top-right-radius: 20px;
+          border-top-left-radius: 20px;
+          border-bottom-left-radius: 0;
+          backdrop-filter: blur(100px);
+          border-bottom: none;
+          border-left: none;
+          border-top: 1px solid $light-muted-1;
+          background: $secondary-muted-2;
+          li a {
+            font-size: $fs-4;
+          }
+        }
+        @media only screen and (min-width: 1024px) {
+          width: 59.55%;
+          justify-content: space-around;
+          gap: 0;
+          position: relative;
+          left: 40.45%;
+          top: 0;
+          border-top-right-radius: 20px;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 20px;
+          backdrop-filter: none;
+          border-top: none;
+          border-bottom: 1px solid $light-muted-1;
+          border-left: 1px solid $light-muted-1;
+          background: $secondary-2;
+          li a {
+            font-size: $fs-4;
+          }
         }
       }
     }
-  }
-  .user-description {
-    width: 100%;
-    #about {
+    .user-description {
       width: 100%;
-      h1 {
-        width: max-content;
-        @media screen and (max-width: 578px) {
+      #about {
+        width: 100%;
+        h1 {
+          width: max-content;
+          @media only screen and (max-width: 580px) {
+            font-size: $fs-2;
+          }
+          @media only screen and (min-width: 580px) {
+            font-size: $fs-1;
+          }
+          &::after {
+            content: '';
+            display: block;
+            width: 26%;
+            margin-top: 0.4em;
+            margin-bottom: 0.6em;
+            border-radius: 10px;
+            border-bottom: 5px solid $warning;
+          }
+        }
+      }
+    }
+    .user-skills {
+      width: 100%;
+      margin-top: 2.49em;
+      @media only screen and (max-width: 580px) {
+        margin-top: 1em;
+      }
+      @media only screen and (min-width: 580px) {
+        margin-top: 2.49em;
+      }
+      h2 {
+        margin-bottom: 0.6em;
+        @media only screen and (max-width: 580px) {
+          font-size: $fs-3;
+        }
+        @media only screen and (min-width: 580px) {
           font-size: $fs-2;
         }
-        &::after {
-          content: '';
-          display: block;
-          width: 26%;
-          margin-top: 0.4em;
-          margin-bottom: 0.6em;
-          border-radius: 10px;
-          border-bottom: 5px solid $warning;
-        }
       }
-    }
-  }
-  .user-skills {
-    width: 100%;
-    margin-top: 2.49em;
-    @media screen and (max-width: 578px) {
-      margin-top: 1em;
-    }
-    h2 {
-      margin-bottom: 0.6em;
-      @media screen and (max-width: 578px) {
-        font-size: $fs-3;
-      }
-    }
-    .card-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1em;
-      .card-list {
-        width: 49%;
-        padding: 1.85em;
+      .card-wrapper {
+        width: 100%;
         display: flex;
         justify-content: space-between;
-        align-items: start;
-        border-radius: 15px;
-        border-top: 1px solid $light-muted-1;
-        border-left: 1px solid $light-muted-1;
-        background: $secondary-2;
-        @media screen and (max-width: 578px) {
-          width: 100%;
-          flex-direction: column;
-          padding-top: 0;
-          align-items: center;
-        }
-        i {
-          width: 65px;
-          height: 65px;
-          font-size: 2.15rem;
-          display: grid;
-          place-items: center;
-          @media screen and (max-width: 578px) {
-            font-size: 1.85em;
-          }
-        }
-        .card-body {
-          width: 75%;
-          @media screen and (max-width: 578px) {
-            width: 100%;
-            text-align: center;
-          }
-          .card-title {
-            margin-bottom: 0.6em;
-            @media screen and (max-width: 578px) {
-              font-size: $fs-4;
-            }
-          }
-        }
-      }
-    }
-  }
-  .testimonials {
-    width: 100%;
-    margin-top: 2.49em;
-    @media screen and (max-width: 578px) {
-      margin-top: 1em;
-    }
-    h2 {
-      margin-bottom: 0.6em;
-      @media screen and (max-width: 578px) {
-        font-size: $fs-3;
-      }
-    }
-    .testimonials-wrapper {
-      width: 100%;
-      padding-bottom: 2.49em;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      @media screen and (max-width: 578px) {
-        padding-bottom: 0;
-      }
-      .testimonials-profile {
-        width: 100%;
-        margin-top: 2.49em;
-        display: flex;
+        flex-wrap: wrap;
         gap: 1em;
-        @media screen and (max-width: 578px) {
-          margin-top: 1em;
-        }
-        .testimonials-list {
+        .card-list {
           width: 49%;
-          scroll-snap-align: start;
-          flex-shrink: 0;
-          cursor: pointer;
-          @media screen and (max-width: 578px) {
+          padding: 1.85em;
+          display: flex;
+          justify-content: space-between;
+          align-items: start;
+          border-radius: 15px;
+          border-top: 1px solid $light-muted-1;
+          border-left: 1px solid $light-muted-1;
+          background: $secondary-2;
+          @media only screen and (max-width: 580px) {
             width: 100%;
+            flex-direction: column;
+            padding-top: 0;
+            align-items: center;
           }
-          .testimonials-image {
+          @media only screen and (min-width: 580px) {
             width: 100%;
-            position: relative;
-            @media screen and (max-width: 578px) {
-              padding: 0.95em;
+            flex-direction: row;
+            padding-top: 1.85em;
+            align-items: center;
+          }
+          @media only screen and (min-width: 1024px) {
+            width: 49%;
+          }
+          i {
+            width: 65px;
+            height: 65px;
+            font-size: 2.15rem;
+            display: grid;
+            place-items: center;
+            @media only screen and (max-width: 580px) {
+              font-size: 1.85em;
             }
-            img {
-              width: 85px;
-              aspect-ratio: 1/1;
-              object-fit: cover;
-              position: absolute;
-              top: -2em;
-              left: 2em;
-              border-radius: 15px;
-              border: 1px solid $light-muted-1;
-              @media screen and (max-width: 578px) {
-                width: 65px;
-                top: -1em;
-                left: 1em;
-              }
+            @media only screen and (min-width: 580px) {
+              font-size: 2.15rem;
             }
-            .testimonials-comment {
+          }
+          .card-body {
+            width: 75%;
+            @media only screen and (max-width: 580px) {
               width: 100%;
-              padding: 1.85em;
-              border-radius: 15px;
-              border-top: 1px solid $light-muted-1;
-              border-left: 1px solid $light-muted-1;
-              background: $secondary-2;
-              @media screen and (max-width: 578px) {
-                width: 109%;
-                padding: 0.95em;
-                margin: auto -0.95em;
+              text-align: center;
+            }
+            @media only screen and (min-width: 580px) {
+              width: 80%;
+              text-align: start;
+            }
+            @media only screen and (min-width: 768px) {
+              width: 86%;
+            }
+            .card-title {
+              margin-bottom: 0.6em;
+              @media only screen and (max-width: 580px) {
+                font-size: $fs-4;
               }
-              .testimonials-name {
-                text-align: center;
-                margin-bottom: 0.6em;
-                @media screen and (max-width: 578px) {
-                  margin-top: 1.5em;
-                  text-align: start;
+              @media only screen and (min-width: 580px) {
+                font-size: $fs-3;
+              }
+            }
+          }
+        }
+      }
+    }
+    .testimonials {
+      width: 100%;
+      margin-top: 2.49em;
+      @media only screen and (max-width: 580px) {
+        margin-top: 1em;
+      }
+      @media only screen and (min-width: 580px) {
+        margin-top: 2.49em;
+      }
+      h2 {
+        margin-bottom: 0.6em;
+        @media only screen and (max-width: 580px) {
+          font-size: $fs-3;
+        }
+        @media only screen and (min-width: 580px) {
+          font-size: $fs-2;
+        }
+      }
+      .testimonials-wrapper {
+        width: 100%;
+        padding-bottom: 2.49em;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        @media only screen and (max-width: 580px) {
+          padding-bottom: 0;
+        }
+        @media only screen and (min-width: 580px) {
+          padding-bottom: 0;
+        }
+        .testimonials-profile {
+          width: 100%;
+          margin-top: 2.49em;
+          display: flex;
+          gap: 1em;
+          @media only screen and (max-width: 580px) {
+            margin-top: 1em;
+          }
+          @media only screen and (min-width: 580px) {
+            margin-top: 1em;
+          }
+          .testimonials-list {
+            width: 49%;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            cursor: pointer;
+            @media only screen and (max-width: 580px) {
+              width: 100%;
+            }
+            @media only screen and (min-width: 580px) {
+              width: 100%;
+            }
+            @media only screen and (min-width: 1024px) {
+              width: 49%;
+            }
+            .testimonials-image {
+              width: 100%;
+              position: relative;
+              @media only screen and (max-width: 580px) {
+                padding: 0.95em 0;
+              }
+              @media only screen and (min-width: 580px) {
+                padding: 0.95em 0;
+              }
+              img {
+                width: 85px;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                position: absolute;
+                top: -2em;
+                left: 2em;
+                border-radius: 15px;
+                border: 1px solid $light-muted-1;
+                @media only screen and (max-width: 580px) {
+                  width: 65px;
+                  top: -1em;
+                  left: 1em;
+                }
+                @media only screen and (min-width: 580px) {
+                  width: 85px;
+                  top: -1em;
+                  left: 2em;
                 }
               }
-              .testimonials-description {
-                display: -webkit-box;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 2;
-                overflow: hidden;
-                @media screen and (max-width: 578px) {
-                  -webkit-line-clamp: 4;
+              .testimonials-comment {
+                width: 100%;
+                padding: 1.85em;
+                border-radius: 15px;
+                border-top: 1px solid $light-muted-1;
+                border-left: 1px solid $light-muted-1;
+                background: $secondary-2;
+                @media only screen and (max-width: 580px) {
+                  padding: 0.95em;
+                }
+                @media only screen and (min-width: 580px) {
+                  padding: 1.85em;
+                }
+                .testimonials-name {
+                  text-align: center;
+                  margin-bottom: 0.6em;
+                  @media only screen and (max-width: 580px) {
+                    margin-top: 1.5em;
+                    text-align: start;
+                  }
+                  @media only screen and (min-width: 580px) {
+                    margin-top: 0;
+                    margin-left: 6em;
+                    text-align: start;
+                  }
+                }
+                .testimonials-description {
+                  display: -webkit-box;
+                  -webkit-box-orient: vertical;
+                  -webkit-line-clamp: 2;
+                  overflow: hidden;
+                  @media only screen and (max-width: 580px) {
+                    -webkit-line-clamp: 4;
+                  }
+                  @media only screen and (min-width: 580px) {
+                    -webkit-line-clamp: 2;
+                  }
                 }
               }
             }
@@ -639,44 +974,66 @@ body {
         }
       }
     }
-  }
-  .clients {
-    width: 100%;
-    margin-top: 2.49em;
-    @media screen and (max-width: 578px) {
-      margin-top: 1em;
-    }
-    h2 {
-      margin-bottom: 0.6em;
-      @media screen and (max-width: 578px) {
-        font-size: $fs-3;
-      }
-    }
-    .clients-wrapper {
+    .clients {
       width: 100%;
-      padding-bottom: 2.49em;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      .clients-profile {
+      margin-top: 2.49em;
+      @media only screen and (max-width: 580px) {
+        margin-top: 1em;
+      }
+      @media only screen and (min-width: 580px) {
+        margin-top: 2.49em;
+      }
+      h2 {
+        margin-bottom: 0.6em;
+        @media only screen and (max-width: 580px) {
+          font-size: $fs-3;
+        }
+        @media only screen and (min-width: 580px) {
+          font-size: $fs-2;
+        }
+      }
+      .clients-wrapper {
         width: 100%;
-        display: flex;
-        gap: 1em;
-        .clients-list {
-          width: 23.5%;
-          scroll-snap-align: start;
-          flex-shrink: 0;
-          @media screen and (max-width: 578px) {
-            width: 30%;
-          }
-          .clients-image {
-            width: 100%;
-            a img {
+        padding-bottom: 2.49em;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        @media only screen and (max-width: 580px) {
+          padding-bottom: 0.95em;
+        }
+        @media only screen and (min-width: 580px) {
+          padding-bottom: 0.95em;
+        }
+        .clients-profile {
+          width: 100%;
+          display: flex;
+          gap: 1em;
+          .clients-list {
+            width: 23.5%;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            @media only screen and (max-width: 580px) {
+              width: 31.27%;
+            }
+            @media only screen and (min-width: 580px) {
+              width: 30.98%;
+            }
+            @media only screen and (min-width: 768px) {
+              width: 30.98%;
+            }
+            @media only screen and (min-width: 1024px) {
+              width: 23.5%;
+            }
+            .clients-image {
               width: 100%;
-              object-fit: cover;
-              filter: grayscale(1);
-              transition: $trans-1;
-              &:hover {
-                filter: grayscale(0);
+              a img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: grayscale(1);
+                transition: $trans-1;
+                &:hover {
+                  filter: grayscale(0);
+                }
               }
             }
           }

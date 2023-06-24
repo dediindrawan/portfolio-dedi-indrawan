@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -87,7 +87,7 @@ body {
   font-weight: normal;
   font-style: normal;
   scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   color: rgb(249, 249, 249);
   background: rgb(16, 16, 16);
 }
@@ -100,12 +100,38 @@ body {
   justify-content: space-between;
   overflow-y: scroll;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container {
-    flex-direction: column;
     padding: 0.95em 0.75em;
     padding-bottom: 4.7em;
+    flex-direction: column;
   }
+}
+@media only screen and (min-width: 580px) {
+  .container {
+    padding: 3.75em 2em;
+    padding-bottom: 5.75em;
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container {
+    padding: 3.75em 4.7em;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+.container .hide-contact {
+  display: none !important;
+}
+@media only screen and (min-width: 1250px) {
+  .container .hide-contact {
+    display: block !important;
+  }
+}
+.container .rotate-contact-icon {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
 }
 .container .testimonials-wrapper-overlay {
   width: 100%;
@@ -121,9 +147,14 @@ body {
   background: rgba(16, 16, 16, 0.8);
   display: none;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .testimonials-wrapper-overlay {
     padding: 0.95em;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .testimonials-wrapper-overlay {
+    padding: 2.5em;
   }
 }
 .container .testimonials-wrapper-overlay .testimonials-list-overlay {
@@ -137,11 +168,23 @@ body {
   border: 1px solid rgba(249, 249, 249, 0.1);
   background: rgb(32, 32, 34);
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .testimonials-wrapper-overlay .testimonials-list-overlay {
     width: 100%;
     padding: 0.95em;
     flex-direction: column;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .testimonials-wrapper-overlay .testimonials-list-overlay {
+    width: 100%;
+    padding: 1.9em 1.85em;
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .testimonials-wrapper-overlay .testimonials-list-overlay {
+    width: 55%;
   }
 }
 .container .testimonials-wrapper-overlay .testimonials-list-overlay .btn-close {
@@ -174,7 +217,7 @@ body {
   width: 85px;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   border-radius: 15px;
   border: 1px solid rgba(249, 249, 249, 0.1);
 }
@@ -185,15 +228,20 @@ body {
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-image-overlay i {
     display: none;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-image-overlay i {
+    display: flex;
   }
 }
 .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-comment-overlay {
   width: 80%;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-comment-overlay {
     width: 100%;
   }
@@ -201,17 +249,34 @@ body {
     font-size: 0.83rem;
   }
 }
+@media only screen and (min-width: 580px) {
+  .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-comment-overlay {
+    width: 85%;
+  }
+  .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-comment-overlay p {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-comment-overlay {
+    width: 80%;
+  }
+}
 .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-comment-overlay .testimonials-date-overlay {
   margin: 0.6em auto;
   color: rgba(249, 249, 249, 0.6);
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-comment-overlay .testimonials-date-overlay {
     font-size: 0.83rem;
   }
 }
+@media only screen and (min-width: 580px) {
+  .container .testimonials-wrapper-overlay .testimonials-list-overlay .testimonials-comment-overlay .testimonials-date-overlay {
+    font-size: 1rem;
+  }
+}
 .container .user-profile {
-  width: 20.35%;
   height: -moz-max-content;
   height: max-content;
   position: sticky;
@@ -223,7 +288,7 @@ body {
   border: 1px solid rgba(249, 249, 249, 0.1);
   background: rgb(32, 32, 34);
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile {
     width: 100%;
     position: relative;
@@ -232,56 +297,133 @@ body {
     padding: 0.95em;
   }
 }
-.container .user-profile .toggle-contact {
-  width: 33px;
-  height: 30px;
-  display: grid;
-  place-items: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  border-bottom-left-radius: 15px;
-  border-top-right-radius: 20px;
-  border-left: 1px solid rgba(249, 249, 249, 0.1);
-  background: rgb(39, 39, 40);
-  color: rgb(254, 218, 114);
-  transition: all 0.3s ease-in-out;
-  display: none;
+@media only screen and (min-width: 580px) {
+  .container .user-profile {
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 1.9em 1.85em;
+  }
 }
-.container .user-profile .toggle-contact:hover {
-  box-shadow: inset 1px 1px 3px rgb(254, 218, 114);
+@media only screen and (min-width: 1250px) {
+  .container .user-profile {
+    width: 22.95%;
+    position: sticky;
+  }
 }
-.container .user-profile .toggle-contact i {
-  font-size: 0.67rem;
-}
-@media screen and (max-width: 578px) {
-  .container .user-profile .toggle-contact {
+@media only screen and (max-width: 580px) {
+  .container .user-profile .toggle-contact i {
+    width: 33px;
+    height: 30px;
     display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 20px;
     cursor: pointer;
+    border-left: 1px solid rgba(249, 249, 249, 0.1);
+    font-size: 0.67rem;
+    background: rgb(39, 39, 40);
+    color: rgb(254, 218, 114);
+    transition: all 0.3s ease-in-out;
+  }
+  .container .user-profile .toggle-contact i:hover {
+    box-shadow: inset 1px 1px 3px rgb(254, 218, 114);
+  }
+  .container .user-profile .toggle-contact .toggle-content {
+    display: none;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-profile .toggle-contact i {
+    display: none;
+  }
+  .container .user-profile .toggle-contact .toggle-content {
+    width: -moz-max-content;
+    width: max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 0.6em 1em;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 20px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    cursor: pointer;
+    border-left: 1px solid rgba(249, 249, 249, 0.1);
+    box-shadow: inset 1px 1px 3px rgb(254, 218, 114);
+    background: rgb(39, 39, 40);
+    color: rgb(254, 218, 114);
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .toggle-contact {
+    display: none;
   }
 }
 .container .user-profile .user-image {
   width: 100%;
   position: relative;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-image {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 }
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .user-image {
+    flex-direction: column;
+  }
+}
 .container .user-profile .user-image .image-profile {
-  width: 100%;
   margin-top: 1.9em;
   display: flex;
   justify-content: center;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-image .image-profile {
     width: 15%;
     margin-top: 0;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-image .image-profile {
+    width: 20%;
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container .user-profile .user-image .image-profile {
+    width: 17%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container .user-profile .user-image .image-profile {
+    width: 15%;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .user-image .image-profile {
+    width: 71.5%;
+    margin-top: 1.9em;
   }
 }
 .container .user-profile .user-image .image-profile img {
@@ -289,10 +431,16 @@ body {
   border-radius: 30px;
   border: 1px solid rgba(249, 249, 249, 0.1);
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-image .image-profile img {
     width: 100%;
     border-radius: 20px;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-image .image-profile img {
+    width: 100%;
+    border-radius: 30px;
   }
 }
 .container .user-profile .user-image .bio-profile {
@@ -301,20 +449,53 @@ body {
   align-items: center;
   flex-direction: column;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-image .bio-profile {
     width: 82%;
     align-items: start;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-image .bio-profile {
+    width: 75%;
+    align-items: start;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container .user-profile .user-image .bio-profile {
+    width: 80%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container .user-profile .user-image .bio-profile {
+    width: 82%;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .user-image .bio-profile {
+    width: 100%;
+    align-items: center;
   }
 }
 .container .user-profile .user-image .bio-profile .username {
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-image .bio-profile .username {
     margin-top: 0;
     font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-image .bio-profile .username {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .user-image .bio-profile .username {
+    margin-top: 1em;
   }
 }
 .container .user-profile .user-image .bio-profile .skills-info {
@@ -322,14 +503,14 @@ body {
   border-radius: 10px;
   background: rgba(249, 249, 249, 0.1);
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-image .bio-profile .skills-info {
     font-size: 0.67rem;
   }
 }
-@media screen and (max-width: 578px) {
-  .container .user-profile .hide-contact {
-    display: none;
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-image .bio-profile .skills-info {
+    font-size: 0.83rem;
   }
 }
 .container .user-profile .user-contact {
@@ -338,10 +519,25 @@ body {
   padding-top: 1.9em;
   border-top: 1px solid rgba(249, 249, 249, 0.1);
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-contact {
     margin-top: 1em;
     padding-top: 1em;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-contact {
+    margin-top: 1.9em;
+    padding-top: 1.9em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container .user-profile .user-contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
   }
 }
 .container .user-profile .user-contact .contact-list {
@@ -353,6 +549,44 @@ body {
 .container .user-profile .user-contact .contact-list:not(:first-child) {
   margin-top: 1.9em;
 }
+@media only screen and (max-width: 580px) {
+  .container .user-profile .user-contact .contact-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .user-profile .user-contact .contact-list:not(:first-child) {
+    margin-top: 1.9em;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-contact .contact-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .user-profile .user-contact .contact-list:not(:first-child) {
+    margin-top: 1.9em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container .user-profile .user-contact .contact-list {
+    width: 48.7%;
+  }
+  .container .user-profile .user-contact .contact-list:not(:first-child) {
+    margin-top: 0;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .user-contact .contact-list {
+    width: 100%;
+  }
+  .container .user-profile .user-contact .contact-list:not(:first-child) {
+    margin-top: 1.9em;
+  }
+}
 .container .user-profile .user-contact .contact-list i {
   width: 48px;
   height: 48px;
@@ -363,7 +597,7 @@ body {
   border-left: 1px solid rgba(249, 249, 249, 0.1);
   background: rgb(39, 39, 40);
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-contact .contact-list i {
     width: 38px;
     height: 38px;
@@ -371,15 +605,52 @@ body {
     font-size: 0.83rem;
   }
 }
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-contact .contact-list i {
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .user-contact .contact-list i {
+    width: 48px;
+    height: 48px;
+  }
+}
 .container .user-profile .user-contact .contact-list .contact-body {
   width: 70%;
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
+  .container .user-profile .user-contact .contact-list .contact-body {
+    width: 89%;
+    font-size: 0.83rem;
+  }
+  .container .user-profile .user-contact .contact-list .contact-body a {
+    font-size: 0.83rem;
+  }
+}
+@media only screen and (min-width: 580px) {
   .container .user-profile .user-contact .contact-list .contact-body {
     width: 85%;
-    font-size: 0.83rem;
+    font-size: 1rem;
+  }
+  .container .user-profile .user-contact .contact-list .contact-body a {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container .user-profile .user-contact .contact-list .contact-body {
+    width: 80%;
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .user-contact .contact-list .contact-body {
+    width: 70%;
   }
 }
 .container .user-profile .user-contact .contact-list .contact-body .contact-title {
@@ -397,7 +668,7 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-profile .user-contact .social-media {
     padding-top: 1em;
     margin-top: 1em;
@@ -407,6 +678,23 @@ body {
   }
   .container .user-profile .user-contact .social-media i {
     font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-profile .user-contact .social-media {
+    padding-top: 1.9em;
+    margin-top: 1.9em;
+    justify-content: start;
+    gap: 1em;
+    border-top: 1px solid rgba(249, 249, 249, 0.1);
+  }
+  .container .user-profile .user-contact .social-media i {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-profile .user-contact .social-media {
+    justify-content: center;
   }
 }
 .container .user-information {
@@ -422,7 +710,7 @@ body {
   border: 1px solid rgba(249, 249, 249, 0.1);
   background: rgb(32, 32, 34);
 }
-@media screen and (max-width: 578px) {
+@media only screen and (max-width: 580px) {
   .container .user-information {
     width: 100%;
     padding: 0.95em;
@@ -434,19 +722,48 @@ body {
     font-size: 0.83rem;
   }
 }
-.container .nav-items {
+@media only screen and (min-width: 580px) {
+  .container .user-information {
+    width: 100%;
+    padding: 1.9em 1.85em;
+    margin-top: -1.85em;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+  .container .user-information p {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container .user-information {
+    margin-bottom: -1.85em;
+  }
+}
+@media only screen and (min-width: 1250px) {
+  .container .user-information {
+    width: 75%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+.container .user-information .nav-items {
   width: 59.55%;
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1;
 }
-@media screen and (max-width: 578px) {
-  .container .nav-items {
+@media only screen and (max-width: 580px) {
+  .container .user-information .nav-items {
     width: 100%;
   }
 }
-.container .nav-items ul {
+@media only screen and (min-width: 580px) {
+  .container .user-information .nav-items {
+    width: 100%;
+  }
+}
+.container .user-information .nav-items ul {
   width: 100%;
   padding: 1.15em 1.6em;
   display: flex;
@@ -458,8 +775,8 @@ body {
   border-left: 1px solid rgba(249, 249, 249, 0.1);
   background: rgba(249, 249, 249, 0.1);
 }
-@media screen and (max-width: 578px) {
-  .container .nav-items ul {
+@media only screen and (max-width: 580px) {
+  .container .user-information .nav-items ul {
     width: 100%;
     justify-content: center;
     gap: 1em;
@@ -469,31 +786,83 @@ body {
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 0;
-    -webkit-backdrop-filter: blur(150px);
-    backdrop-filter: blur(150px);
+    -webkit-backdrop-filter: blur(100px);
+            backdrop-filter: blur(100px);
+    border-bottom: none;
+    border-left: none;
+    border-top: 1px solid rgba(249, 249, 249, 0.1);
     background: rgba(39, 39, 40, 0.5);
   }
-  .container .nav-items ul li a {
+  .container .user-information .nav-items ul li a {
     font-size: 0.67rem;
   }
 }
-.container .user-description {
+@media only screen and (min-width: 580px) {
+  .container .user-information .nav-items ul {
+    width: 100%;
+    justify-content: center;
+    gap: 1em;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 0;
+    -webkit-backdrop-filter: blur(100px);
+            backdrop-filter: blur(100px);
+    border-bottom: none;
+    border-left: none;
+    border-top: 1px solid rgba(249, 249, 249, 0.1);
+    background: rgba(39, 39, 40, 0.5);
+  }
+  .container .user-information .nav-items ul li a {
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container .user-information .nav-items ul {
+    width: 59.55%;
+    justify-content: space-around;
+    gap: 0;
+    position: relative;
+    left: 40.45%;
+    top: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 20px;
+    -webkit-backdrop-filter: none;
+            backdrop-filter: none;
+    border-top: none;
+    border-bottom: 1px solid rgba(249, 249, 249, 0.1);
+    border-left: 1px solid rgba(249, 249, 249, 0.1);
+    background: rgb(39, 39, 40);
+  }
+  .container .user-information .nav-items ul li a {
+    font-size: 1rem;
+  }
+}
+.container .user-information .user-description {
   width: 100%;
 }
-.container .user-description #about {
+.container .user-information .user-description #about {
   width: 100%;
 }
-.container .user-description #about h1 {
+.container .user-information .user-description #about h1 {
   width: -moz-max-content;
   width: max-content;
 }
-@media screen and (max-width: 578px) {
-  .container .user-description #about h1 {
+@media only screen and (max-width: 580px) {
+  .container .user-information .user-description #about h1 {
     font-size: 1.5rem;
   }
 }
-.container .user-description #about h1::after {
-  content: '';
+@media only screen and (min-width: 580px) {
+  .container .user-information .user-description #about h1 {
+    font-size: 2rem;
+  }
+}
+.container .user-information .user-description #about h1::after {
+  content: "";
   display: block;
   width: 26%;
   margin-top: 0.4em;
@@ -501,31 +870,41 @@ body {
   border-radius: 10px;
   border-bottom: 5px solid rgb(254, 218, 114);
 }
-.container .user-skills {
+.container .user-information .user-skills {
   width: 100%;
   margin-top: 2.49em;
 }
-@media screen and (max-width: 578px) {
-  .container .user-skills {
+@media only screen and (max-width: 580px) {
+  .container .user-information .user-skills {
     margin-top: 1em;
   }
 }
-.container .user-skills h2 {
+@media only screen and (min-width: 580px) {
+  .container .user-information .user-skills {
+    margin-top: 2.49em;
+  }
+}
+.container .user-information .user-skills h2 {
   margin-bottom: 0.6em;
 }
-@media screen and (max-width: 578px) {
-  .container .user-skills h2 {
+@media only screen and (max-width: 580px) {
+  .container .user-information .user-skills h2 {
     font-size: 1.17rem;
   }
 }
-.container .user-skills .card-wrapper {
+@media only screen and (min-width: 580px) {
+  .container .user-information .user-skills h2 {
+    font-size: 1.5rem;
+  }
+}
+.container .user-information .user-skills .card-wrapper {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1em;
 }
-.container .user-skills .card-wrapper .card-list {
+.container .user-information .user-skills .card-wrapper .card-list {
   width: 49%;
   padding: 1.85em;
   display: flex;
@@ -536,121 +915,197 @@ body {
   border-left: 1px solid rgba(249, 249, 249, 0.1);
   background: rgb(39, 39, 40);
 }
-@media screen and (max-width: 578px) {
-  .container .user-skills .card-wrapper .card-list {
+@media only screen and (max-width: 580px) {
+  .container .user-information .user-skills .card-wrapper .card-list {
     width: 100%;
     flex-direction: column;
     padding-top: 0;
     align-items: center;
   }
 }
-.container .user-skills .card-wrapper .card-list i {
+@media only screen and (min-width: 580px) {
+  .container .user-information .user-skills .card-wrapper .card-list {
+    width: 100%;
+    flex-direction: row;
+    padding-top: 1.85em;
+    align-items: center;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container .user-information .user-skills .card-wrapper .card-list {
+    width: 49%;
+  }
+}
+.container .user-information .user-skills .card-wrapper .card-list i {
   width: 65px;
   height: 65px;
   font-size: 2.15rem;
   display: grid;
   place-items: center;
 }
-@media screen and (max-width: 578px) {
-  .container .user-skills .card-wrapper .card-list i {
+@media only screen and (max-width: 580px) {
+  .container .user-information .user-skills .card-wrapper .card-list i {
     font-size: 1.85em;
   }
 }
-.container .user-skills .card-wrapper .card-list .card-body {
+@media only screen and (min-width: 580px) {
+  .container .user-information .user-skills .card-wrapper .card-list i {
+    font-size: 2.15rem;
+  }
+}
+.container .user-information .user-skills .card-wrapper .card-list .card-body {
   width: 75%;
 }
-@media screen and (max-width: 578px) {
-  .container .user-skills .card-wrapper .card-list .card-body {
+@media only screen and (max-width: 580px) {
+  .container .user-information .user-skills .card-wrapper .card-list .card-body {
     width: 100%;
     text-align: center;
   }
 }
-.container .user-skills .card-wrapper .card-list .card-body .card-title {
+@media only screen and (min-width: 580px) {
+  .container .user-information .user-skills .card-wrapper .card-list .card-body {
+    width: 80%;
+    text-align: start;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container .user-information .user-skills .card-wrapper .card-list .card-body {
+    width: 86%;
+  }
+}
+.container .user-information .user-skills .card-wrapper .card-list .card-body .card-title {
   margin-bottom: 0.6em;
 }
-@media screen and (max-width: 578px) {
-  .container .user-skills .card-wrapper .card-list .card-body .card-title {
+@media only screen and (max-width: 580px) {
+  .container .user-information .user-skills .card-wrapper .card-list .card-body .card-title {
     font-size: 1rem;
   }
 }
-.container .testimonials {
-  width: 100%;
-  margin-top: 2.49em;
-}
-@media screen and (max-width: 578px) {
-  .container .testimonials {
-    margin-top: 1em;
-  }
-}
-.container .testimonials h2 {
-  margin-bottom: 0.6em;
-}
-@media screen and (max-width: 578px) {
-  .container .testimonials h2 {
+@media only screen and (min-width: 580px) {
+  .container .user-information .user-skills .card-wrapper .card-list .card-body .card-title {
     font-size: 1.17rem;
   }
 }
-.container .testimonials .testimonials-wrapper {
+.container .user-information .testimonials {
+  width: 100%;
+  margin-top: 2.49em;
+}
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials {
+    margin-top: 1em;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials {
+    margin-top: 2.49em;
+  }
+}
+.container .user-information .testimonials h2 {
+  margin-bottom: 0.6em;
+}
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials h2 {
+    font-size: 1.17rem;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials h2 {
+    font-size: 1.5rem;
+  }
+}
+.container .user-information .testimonials .testimonials-wrapper {
   width: 100%;
   padding-bottom: 2.49em;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
 }
-@media screen and (max-width: 578px) {
-  .container .testimonials .testimonials-wrapper {
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper {
     padding-bottom: 0;
   }
 }
-.container .testimonials .testimonials-wrapper .testimonials-profile {
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper {
+    padding-bottom: 0;
+  }
+}
+.container .user-information .testimonials .testimonials-wrapper .testimonials-profile {
   width: 100%;
   margin-top: 2.49em;
   display: flex;
   gap: 1em;
 }
-@media screen and (max-width: 578px) {
-  .container .testimonials .testimonials-wrapper .testimonials-profile {
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile {
     margin-top: 1em;
   }
 }
-.container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list {
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile {
+    margin-top: 1em;
+  }
+}
+.container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list {
   width: 49%;
   scroll-snap-align: start;
   flex-shrink: 0;
   cursor: pointer;
 }
-@media screen and (max-width: 578px) {
-  .container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list {
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list {
     width: 100%;
   }
 }
-.container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image {
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list {
+    width: 49%;
+  }
+}
+.container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image {
   width: 100%;
   position: relative;
 }
-@media screen and (max-width: 578px) {
-  .container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image {
-    padding: 0.95em;
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image {
+    padding: 0.95em 0;
   }
 }
-.container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image img {
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image {
+    padding: 0.95em 0;
+  }
+}
+.container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image img {
   width: 85px;
   aspect-ratio: 1/1;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   position: absolute;
   top: -2em;
   left: 2em;
   border-radius: 15px;
   border: 1px solid rgba(249, 249, 249, 0.1);
 }
-@media screen and (max-width: 578px) {
-  .container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image img {
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image img {
     width: 65px;
     top: -1em;
     left: 1em;
   }
 }
-.container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment {
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image img {
+    width: 85px;
+    top: -1em;
+    left: 2em;
+  }
+}
+.container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment {
   width: 100%;
   padding: 1.85em;
   border-radius: 15px;
@@ -658,82 +1113,133 @@ body {
   border-left: 1px solid rgba(249, 249, 249, 0.1);
   background: rgb(39, 39, 40);
 }
-@media screen and (max-width: 578px) {
-  .container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment {
-    width: 109%;
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment {
     padding: 0.95em;
-    margin: auto -0.95em;
   }
 }
-.container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-name {
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment {
+    padding: 1.85em;
+  }
+}
+.container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-name {
   text-align: center;
   margin-bottom: 0.6em;
 }
-@media screen and (max-width: 578px) {
-  .container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-name {
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-name {
     margin-top: 1.5em;
     text-align: start;
   }
 }
-.container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-description {
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-name {
+    margin-top: 0;
+    margin-left: 6em;
+    text-align: start;
+  }
+}
+.container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-description {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
-@media screen and (max-width: 578px) {
-  .container .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-description {
+@media only screen and (max-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-description {
     -webkit-line-clamp: 4;
   }
 }
-.container .clients {
+@media only screen and (min-width: 580px) {
+  .container .user-information .testimonials .testimonials-wrapper .testimonials-profile .testimonials-list .testimonials-image .testimonials-comment .testimonials-description {
+    -webkit-line-clamp: 2;
+  }
+}
+.container .user-information .clients {
   width: 100%;
   margin-top: 2.49em;
 }
-@media screen and (max-width: 578px) {
-  .container .clients {
+@media only screen and (max-width: 580px) {
+  .container .user-information .clients {
     margin-top: 1em;
   }
 }
-.container .clients h2 {
+@media only screen and (min-width: 580px) {
+  .container .user-information .clients {
+    margin-top: 2.49em;
+  }
+}
+.container .user-information .clients h2 {
   margin-bottom: 0.6em;
 }
-@media screen and (max-width: 578px) {
-  .container .clients h2 {
+@media only screen and (max-width: 580px) {
+  .container .user-information .clients h2 {
     font-size: 1.17rem;
   }
 }
-.container .clients .clients-wrapper {
+@media only screen and (min-width: 580px) {
+  .container .user-information .clients h2 {
+    font-size: 1.5rem;
+  }
+}
+.container .user-information .clients .clients-wrapper {
   width: 100%;
   padding-bottom: 2.49em;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
 }
-.container .clients .clients-wrapper .clients-profile {
+@media only screen and (max-width: 580px) {
+  .container .user-information .clients .clients-wrapper {
+    padding-bottom: 0.95em;
+  }
+}
+@media only screen and (min-width: 580px) {
+  .container .user-information .clients .clients-wrapper {
+    padding-bottom: 0.95em;
+  }
+}
+.container .user-information .clients .clients-wrapper .clients-profile {
   width: 100%;
   display: flex;
   gap: 1em;
 }
-.container .clients .clients-wrapper .clients-profile .clients-list {
+.container .user-information .clients .clients-wrapper .clients-profile .clients-list {
   width: 23.5%;
   scroll-snap-align: start;
   flex-shrink: 0;
 }
-@media screen and (max-width: 578px) {
-  .container .clients .clients-wrapper .clients-profile .clients-list {
-    width: 30%;
+@media only screen and (max-width: 580px) {
+  .container .user-information .clients .clients-wrapper .clients-profile .clients-list {
+    width: 31.27%;
   }
 }
-.container .clients .clients-wrapper .clients-profile .clients-list .clients-image {
+@media only screen and (min-width: 580px) {
+  .container .user-information .clients .clients-wrapper .clients-profile .clients-list {
+    width: 30.98%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .container .user-information .clients .clients-wrapper .clients-profile .clients-list {
+    width: 30.98%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container .user-information .clients .clients-wrapper .clients-profile .clients-list {
+    width: 23.5%;
+  }
+}
+.container .user-information .clients .clients-wrapper .clients-profile .clients-list .clients-image {
   width: 100%;
 }
-.container .clients .clients-wrapper .clients-profile .clients-list .clients-image a img {
+.container .user-information .clients .clients-wrapper .clients-profile .clients-list .clients-image a img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
-  object-fit: cover;
+     object-fit: cover;
   filter: grayscale(1);
   transition: all 0.3s ease-in-out;
 }
-.container .clients .clients-wrapper .clients-profile .clients-list .clients-image a img:hover {
+.container .user-information .clients .clients-wrapper .clients-profile .clients-list .clients-image a img:hover {
   filter: grayscale(0);
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
